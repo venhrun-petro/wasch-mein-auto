@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+  {{ partial "head.html" . }}
+  <body>
+    {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    {{ if eq .Page  (.Site.GetPage "why-bramble") }}
+         {{ partial "pages/bramble.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "product") }} 
+      {{ partial "pages/product.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "company") }} 
+      {{ partial "pages/company.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "careers") }} 
+      {{ partial "pages/careers.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "terms") }} 
+      {{ partial "pages/terms.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "privacy") }} 
+      {{ partial "pages/privacy.html" . }}
+    {{ else if eq .Page  (.Site.GetPage "contact") }} 
+      {{ partial "pages/contact.html" . }}
+    {{end}}
+
+    {{ block "page" . }}
+    {{ end }}
+    {{ partial "footer.html" . }}
+  </body>
+</html>
+

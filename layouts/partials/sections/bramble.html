@@ -1,0 +1,48 @@
+<sections class="bramble">
+    {{  if .Params.bramble_img }}<img class="general-img-white" src="{{ .Params.bramble_img | absURL }}" alt="bg"/>{{ end }}
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.bramble_title }}</h2>
+        {{  if .Params.bramble_paragraph }}
+        <p class="general_paragraph">{{ .Params.bramble_paragraph }}</p>
+        {{ end }}
+        {{  if .Params.bramble_h5 }}
+        <p class="h5">{{ .Params.bramble_h5 }}</p>
+        {{ end }}
+        {{  if .Params.bramble_button_link }}
+        <a href="{{ .Site.BaseURL }}{{ .Params.bramble_button_link }}" class="general-button" >{{ .Params.bramble_button_text }}</a>
+        {{ end }}
+    </div>
+    {{ if .Params.bramble_block }}
+    <div class="container-small">
+        <div class="row">
+            <div class="bramble_cont">
+                {{ range .Params.bramble_block }}
+                    <div class="bramble_cont_block">
+                        <img class="bramble_cont_block_img" src="{{ .img | absURL }}" alt="teaser" />
+                        <h5 class="bramble_cont_block_text h5">{{ .title }}</h5>
+                    </div> 
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    {{ if .Params.bramble_list }}
+    <div class="bramble_list">
+        <div class="container">
+            <div class="row">
+                <div class="bramble_list_cont">
+                    {{ range .Params.bramble_list }}
+                        <div class="bramble_list_cont_items">
+                            <div class="bramble_list_cont_items_block">
+                                <h2 class="title-d4">{{ .title }}</h2>
+                                <p class="general_paragraph">{{ .paragraph }}</p>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+ 
+</sections>

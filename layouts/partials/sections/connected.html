@@ -1,0 +1,20 @@
+<sections class="connected">
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.connected_title }}</h2>
+        <p class="lead-text">{{ .Params.connected_paragraph }}</p>
+        <div class="container-small">
+            <div class="row">
+                <div class="connected_cont">
+                    {{ range .Params.connected_list }}
+                        <a class="connected_cont_items">
+                            <img class="connected_cont_items_icons" src="{{ .img }}" alt="salesforce" />
+                            <h5 class="h5">{{ .title }}</h5>
+                        </a>
+                    {{ end }}
+                </div>
+                <p class="connected_api-text">{{ .Params.connected_api_text }}<p>
+            </div>
+        </div>
+    </div>
+    <img class="general-img-white" src="svg/white-bg.svg" alt="bg"/>
+</sections>

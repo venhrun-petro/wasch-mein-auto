@@ -1,0 +1,12 @@
+<sections class="info">
+    <div class="container">
+        <div class="info_cont">
+            {{ range .Params.info_list }}
+                <div  class="info_cont_items">
+                    <p>{{ .text }}</p>
+                    <a href="{{ .url }}">{{ .info }}</a>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</sections>

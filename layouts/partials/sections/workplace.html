@@ -1,0 +1,30 @@
+<sections class="workplace">
+    <div class="container">
+        <div class="row">
+            <div class="workplace_cont">
+                {{ range .Params.workplace_list }}
+                    <div class="workplace_cont_items" id="{{ .id }}">
+                        <div class="workplace_cont_items_content">
+                            {{ if .button }}
+                                {{ range .button}}
+                                    <a class="workplace_cont_items_content_button"><img src="{{ .img | absURL }}" alt="">{{ .text }}</a>
+                                {{ end }}
+                            {{ end }}
+                            {{ if .general_img }}
+                            <div class="workplace_cont_items_content_img {{ if .img_circle }} workplace_cont_items_content_img-circle {{ end }}">
+                                <img class="workplace_cont_items_content_img_general" src="{{ .general_img | absURL }}" alt="workplace_general" />
+                                {{ if .img_circle }}
+                                    <img class="workplace_cont_items_content_img_circle" src="{{ .img_circle | absURL }}" alt="workplace_circle" />
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                        <div class="workplace_cont_items_content">
+                            {{ .workplace_content | markdownify }}
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</sections>

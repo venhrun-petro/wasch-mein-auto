@@ -1,0 +1,25 @@
+<sections class="teaser {{ if .Params.img_right }} bg-white {{ end }}">
+    <div class="container">
+        <div class="row">
+            <div class="teaser_cont">
+                <div class="teaser_cont_left">
+                    <h2 class="title-d3">{{ .Params.page_title }}</h2>
+                    <p class="teaser_cont_left_paragraph">{{ .Params.Subtitle }} {{ if .Params.Subtitle_Green }}<span>{{ .Params.Subtitle_Green }}</span>{{ end }}</p>
+                    <div class="teaser_btr-row">
+                        <a href="{{ .Site.BaseURL }}{{ .Params.teaser_button_link }}" class="general-button" src="{{ .Params.Teaser_button_link }}">{{ .Params.Teaser_button_text }}</a>
+                        {{ if .Params.Teaser_button_purchase }}<a href="{{ .Site.BaseURL }}{{ .Params.Teaser_button_purchase_link }}" class="general-button_purchase" >{{ .Params.Teaser_button_purchase }}</a>{{ end }}
+                    </div>
+                </div>
+                <div class="teaser_cont_right">
+                    <img class="teaser_cont_right_img" src="{{ .Params.Teaser_img | absURL  }}" alt="teaser" />
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ if .Params.img_right }}
+        <img class="general-img-right general-img-right-2" src="{{ .Params.img_right | absURL }}" alt="bg"/>
+    {{ else }}
+        <img class="general-img-white" src="{{ "svg/white-bg.svg" | absURL }}" alt="bg"/>
+    {{ end }}
+    <img class="general-img-right-top" src="{{ .Params.img_right_top | absURL }}" alt="bg"/>
+</sections>

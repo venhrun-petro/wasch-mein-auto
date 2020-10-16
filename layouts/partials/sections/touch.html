@@ -1,0 +1,35 @@
+<sections class="touch" id="touch">
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.touch_title }}</h2>
+        {{  if .Params.touch_paragraph }}
+        <p class="general_paragraph">{{ .Params.touch_paragraph }}</p>
+        {{ end }}
+    </div>
+    <div class="container"> 
+        <form class="touch_form">
+            <div class="touch_form_items">
+                <label class="touch_form_items_label" for="name">Full Name:</label>
+                <input class="touch_form_items_input" type="text" name="name" placeholder="Annabelle Porter" required>
+            </div>
+            <div class="touch_form_items">
+                <label class="touch_form_items_label" for="email">Email Address:</label>
+                <input class="touch_form_items_input" type="email" name="email" placeholder="you@website.com" required>
+            </div>
+            <div class="touch_form_items">
+                <label class="touch_form_items_label" for="Company">Company (optional):</label>
+                <input class="touch_form_items_input" type="text" name="Company" placeholder="Copmany Name" required>
+            </div>
+            <div class="touch_form_items">
+                <label class="touch_form_items_label" for="phone">Phone (optional):</label>
+                <input class="touch_form_items_input" type="text" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="touch_form_items touch_form_items_texteria">
+                <label class="touch_form_items_label" for="texteria">Your Message:</label>
+                <textarea class="touch_form_items_input" name="phone" placeholder="Type here" required ></textarea>
+            </div>
+            <div class="touch_form_btn">
+                <button class="general-button" type="submit">Send Message</button>
+            </div>
+        </form>
+    </div>
+</sections>

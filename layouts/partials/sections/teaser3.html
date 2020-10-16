@@ -1,0 +1,18 @@
+<sections class="teaser3">
+    <div class="container">
+        <div class="row">
+            <div class="teaser3_cont">
+                    <h2 class="title-d3">{{ .Params.page_title }}</h2>
+                    <p class="teaser3_cont_paragraph">{{ .Params.Subtitle }} {{ if .Params.Subtitle_Green }}<span>{{ .Params.Subtitle_Green }}</span>{{ end }}</p>
+                    {{ if .Params.teaser3_button_text }}<div>
+                        <a href="{{ .Site.BaseURL }}{{ .Params.teaser3_button_link }}" class="teaser3_cont_btn">{{ .Params.teaser3_button_text }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <img class="teaser3_bg" src="{{ .Params.teaser_bg | absURL }}" alt="teaser_bg" />
+    <img class="general-img-white" src="{{ "svg/white-bg.svg" | absURL }}" alt="bg"/>
+</sections>

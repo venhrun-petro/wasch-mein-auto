@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <sections class="content">
+    <img class="content_img" src="{{ .Params.img | absURL }}" alt="bg" />
+    <div class="container">
+        <div class="content_cont">
+            <div class="content_cont_bottom" id="element-print">
+                <h2>{{ .Title }}</h2>
+                <h3>{{ .Params.subtitle }}</h3>
+                <p>{{ .Params.paragraph | markdownify }}</p>
+                {{ .Content }}
+            </div>
+        </div>
+        <div class="pager pager-single">
+          {{ if .PrevInSection }}
+            <a class="button-read button-read-prev" href="{{ .PrevInSection.Permalink }}" >
+              <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+              Prev {{  .PrevInSection.Title  }}
+            </a>
+          {{ end }}
+          {{ if .NextInSection }}
+            <a class="button-read" href="{{ .NextInSection.Permalink }}" >Next {{ .NextInSection.Title }}
+              <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+            </a>
+          {{ end }}
+          </div>
+    </div>
+  </sections>
+{{ end }}

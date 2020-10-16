@@ -1,0 +1,840 @@
+{{ define "main" }}
+<section
+class="slide fade-6 kenBurns"
+data-title="Service beauftragen"
+data-name="order"
+id="main"
+>
+<div class="content">
+  <div class="container">
+    <div class="wrap" style="padding-top: 80px;">
+      <h1 class="ae-2 showForMobile">
+        <span
+          class="opacity-8"
+          style="
+            font-size: 19px;
+            font-weight: 300;
+            letter-spacing: 0.1px;
+          "
+          >Autoreinigung Berlin</span
+        >
+      </h1>
+      <span
+        class="opacity-10 ae-2 showForMobile"
+        style="font-size: 40px; font-weight: 800; letter-spacing: -0.7px;"
+        >Gönn dir ein sauberes Auto in 120 Min!<br /><br
+      /></span>
+      <div class="fix-12-12">
+        <ul class="flex fixedSpaces verticalCenter">
+          <li
+            class="col-6-12 fix-4-12 left ae-1 margin-top-4 mobileMargin"
+          >
+            <div
+              class="pad padding-top-2 padding-bottom-2 shadow selected ae-3 left"
+            >
+              <form
+                class="slides-form wide"
+                id="mainForm"
+                onSubmit="onFormSubmit()"
+                action="service.html"
+                autocomplete="on"
+              >
+                <input name="referral" id="referral" type="hidden" />
+                <input
+                  class="rounded wide ae-3"
+                  id="carPlate"
+                  type="name"
+                  name="carplate"
+                  autocapitalize="characters"
+                  placeholder="Kennzeichen, zB. A-BC 1234"
+                  required
+                  onKeyUp="this.value = this.value.toUpperCase();"
+                />
+                <h7 class="label left opacity-6" for="phone55"
+                  >1. Welche Reinigung ?</h7
+                >
+                <ul>
+                  <li class="checkbox-container">
+                    <input
+                      checked
+                      disabled
+                      type="checkbox"
+                      name="Außenreinigung"
+                      id="checkboxOutside"
+                    />
+                    <label
+                      id="checkboxOutsideLabel"
+                      for="checkboxOutside"
+                      class="checkbox-disabled"
+                      style="margin-top: 0;"
+                      ><p class="checkboxOutsideText">
+                        Außenreinigung [29,99€]
+                      </p></label
+                    >
+                    <span
+                      data-dropdown-id="cleanOutside"
+                      class="dropdownTrigger"
+                      ><i
+                        class="material-icons opacity-5"
+                        style="font-size: 18px;"
+                        >contact_support</i
+                      ></span
+                    >
+                  </li>
+                  <li class="checkbox-container">
+                    <input
+                      type="checkbox"
+                      name="Innen"
+                      id="checkboxInside"
+                    />
+                    <label id="checkboxInsideLabel" for="checkboxInside"
+                      ><p class="checkboxOutsideText">
+                        Innenreinigung [14,99€]
+                      </p></label
+                    >
+                    <span
+                      data-dropdown-id="cleanInside"
+                      class="dropdownTrigger"
+                      ><i
+                        class="material-icons opacity-5"
+                        style="font-size: 18px;"
+                        >contact_support</i
+                      ></span
+                    >
+                  </li>
+                </ul>
+                <select
+                  class="wide"
+                  style="
+                    max-width: 100%;
+                    margin-top: 15px;
+                    padding-right: 26px;
+                    display: none !important;
+                  "
+                  id="frequency"
+                  name="frequency"
+                >
+                  <option value="wöchentlich"
+                    >1x pro Woche (jederz. kündbar)
+                  </option>
+                  <option value="zweiwöchentlich"
+                    >1x pro 2-Wochen (jederz. kündbar)
+                  </option>
+                  <option value="monatlich" selected="true"
+                    >1x pro Monat (jederz. kündbar)
+                  </option>
+                  <option value="einmalig">einmalig (+5€)</option>
+                </select>
+                <div class="label left opacity-6">
+                  2. Wo soll gereinigt werden ?
+                </div>
+                <button
+                  type="submit"
+                  class="button pink rounded wide ae-3"
+                  name="button"
+                >
+                  Hier steht mein Auto »
+                </button>
+                <div class="label ae-3 cropTop">
+                  <div
+                    class="center cropTop opacity-10 margin-bottom-2 padding-top-1"
+                  >
+                    <span style="font-size: 16px;"
+                      >- oder -<br />Nicht jetzt reinigen?
+                      <a
+                        style="color: #00bcd4; font-weight: 600;"
+                        target="_blank"
+                        onClick="calendlyonclick()"
+                        ><u>Wunschtermin sichern</u></a
+                      ></span
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li class="col-6-12 left margin-top-4">
+            <h1 class="ae-2 hideForMobile">
+              <span
+                class="opacity-8"
+                style="
+                  font-size: 19px;
+                  font-weight: 300;
+                  letter-spacing: 0.1px;
+                "
+                >Autoreinigung Berlin</span
+              >
+            </h1>
+            <span
+              class="opacity-10 ae-2 hideForMobile"
+              style="
+                font-size: 40px;
+                font-weight: 800;
+                letter-spacing: -0.7px;
+              "
+              >Gönn dir ein sauberes Auto in 120 Min!<br /><br
+            /></span>
+            <ul class="flex flex-61 later">
+              <li class="col-6-12 ae-4">
+                <i class="material-icons" style="font-size: 28px;"
+                  >flash_on</i
+                >
+                <h4
+                  class="small margin-bottom-1"
+                  style="font-size: 20px;"
+                >
+                  Blitzschnell <120 Min
+                </h4>
+                <p class="small opacity-8">
+                  Werktags 8-17 Uhr in unter 2 Std. gereinigt
+                </p>
+              </li>
+              <li class="col-6-12 ae-5">
+                <i class="material-icons" style="font-size: 28px;"
+                  >flare</i
+                >
+                <h4
+                  class="small margin-bottom-1"
+                  style="font-size: 20px;"
+                >
+                  Blitzblank vom Profi
+                </h4>
+                <p class="small opacity-8">
+                  Erfahrene und versicherte Profis reinigen dein Auto
+                </p>
+              </li>
+              <li class="col-6-12 ae-6">
+                <i class="material-icons" style="font-size: 28px;"
+                  >near_me</i
+                >
+                <h4
+                  class="small margin-bottom-1"
+                  style="font-size: 20px;"
+                >
+                  Bequem vor Ort
+                </h4>
+                <p class="small opacity-8">
+                  Überall in Berlin bequem dort, wo du gerade parkst.
+                </p>
+              </li>
+              <li class="col-6-12 ae-7">
+                <i class="material-icons" style="font-size: 28px;">eco</i>
+                <h4
+                  class="small margin-bottom-1"
+                  style="font-size: 20px;"
+                >
+                  Ökologisch
+                </h4>
+                <p class="small opacity-8">
+                  Spare 600 Liter Wasser im Vergleich zur Waschanlage
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="background"
+  style="
+    background-image: url(landing/assets/uploads/wma-main-bg.png?p=ZUsSVq8a);
+  "
+></div>
+</section>
+
+<!-- Share Window -->
+<div class="dropdown padding-1 right" data-dropdown-id="plate">
+<div class="title left">
+  Damit wir dein Auto vor Ort auch schnell finden.
+</div>
+</div>
+<div class="dropdown padding-1 right" data-dropdown-id="frequency">
+<div class="title left">
+  Sag uns, wie regelmäßig du dein Auto reinigen lassen möchtest. Du kannst
+  dies jederzeit ändern bzw. kündigen.
+</div>
+</div>
+<div class="dropdown padding-1 right" data-dropdown-id="whatsapp">
+<div class="title left">
+  Im Anschluss öffnet sich die Whatsapp App, wo du den aktuellen Standort
+  deines Autos teilst.
+</div>
+</div>
+<div class="dropdown padding-1 right" data-dropdown-id="cleanOutside">
+<div class="title left">
+  Unsere Profis reinigen dein Auto von Außen mit einem
+  Spezial-Trockenspray und Mikrofasertuch von Hand - ganz ohne Wasser und
+  blitzblank!
+</div>
+</div>
+<div class="dropdown padding-1 right" data-dropdown-id="cleanInside">
+<div class="title left">
+  Unsere Profis reinigen dein Auto von Innen blitzeblank! Um es von Innen
+  zu reinigen, organisieren wir nach Beauftragung die Schlüsselübergabe.
+</div>
+</div>
+<!-- Slide 2 So funktioniert -->
+<section
+class="slide fromLeft whiteSlide"
+data-title="So funktioniert's"
+data-name="Sofunktioniert's"
+id="Sofunktioniert"
+>
+<div class="content">
+  <div class="container">
+    <div class="wrap">
+      <div class="fix-12-12">
+        <h1 class="ae-2 smaller margin-bottom-2">
+          Autoreinigung ganz einfach
+        </h1>
+        <p class="ae-3 larger light margin-bottom-3">
+          <span class="opacity-8"
+            >Unsere ServiceHeroes reinigen die Flotten-Fahrzeuge der
+            großen Marken. Ab sofort profitierst du von dieser
+            Expertise.</span
+          >
+        </p>
+        <ul class="flex reverse">
+          <li class="col-6-12 left cell-32">
+            <ul
+              class="slider rounded margin-top-4 autoplay clickable shadow ae-1"
+              data-slider-id="22-9"
+            >
+              <li class="wide selected text-white">
+                <img
+                  src="landing/assets/uploads/miriam-quer-cyan-1200.jpg?p=ZUsSVq8a"
+                  class="wide lazyload"
+                  alt="Image"
+                />
+                <p class="larger bold title-slide-99 lineHeight">
+                  "Na klar, fahre ich lieber in einem sauberen Auto.
+                  Selbst zu waschen war mir zu anstrengend."
+                </p>
+                <p class="more-99 smallest uppercase bold opacity-8">
+                  MIRIAM, 27
+                </p>
+              </li>
+              <li class="wide text-white">
+                <img
+                  src="landing/assets/uploads/georg-quer-cyan-1200.jpg?p=ZUsSVq8a"
+                  class="wide lazyload"
+                  alt="Image"
+                />
+                <p class="larger bold title-slide-99 lineHeight">
+                  "Mit Kind freuen wir uns über jede gewonnene Minute."
+                </p>
+                <p class="more-99 smallest uppercase bold opacity-8">
+                  GEORG &amp; PAMELA
+                </p>
+              </li>
+            </ul>
+            <!-- controller -->
+            <ul
+              class="controller center dots ae-3 margin-top-3"
+              data-slider-id="22-9"
+            >
+              <li class="dot selected"></li>
+              <li class="dot"></li>
+            </ul>
+          </li>
+          <li class="col-6-12 left ae-1">
+            <ul class="items-32 margin-top-4">
+              <li class="fix-4-12 toLeft ae-4 margin-bottom-3">
+                <h4 class="small margin-bottom-1">
+                  1. Auto-Standort teilen
+                </h4>
+                <p class="opacity-8">
+                  Schreib uns das Kennzeichen und wo wir das Auto reinigen
+                  sollen.
+                </p>
+              </li>
+              <li class="fix-4-12 toLeft ae-5 margin-bottom-3">
+                <h4 class="small margin-bottom-1">2. Reinigen lassen</h4>
+                <p class="opacity-8">
+                  Profis waschen dein Auto innerhalb von 2 Std. überall in
+                  Berlin.
+                </p>
+              </li>
+              <li class="fix-4-12 toLeft ae-5 margin-bottom-3">
+                <h4 class="small margin-bottom-1">3. Bequem bezahlen</h4>
+                <p class="opacity-8">
+                  Bezahle bequem im Anschluss an die Reinigung per Paypal.
+                </p>
+              </li>
+              <a
+                href="#main"
+                class="button big cyan rounded ae-7 fromCenter margin-top-1"
+                alt="Wasch-mein-Auto"
+                >Jetzt beauftragen</a
+              >
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Slide 3 preis -->
+<section
+class="slide fade-6 kenBurns"
+data-title="Auto günstig waschen lassen"
+data-name="priceList"
+id="preis"
+>
+<div class="content">
+  <div class="container">
+    <div class="wrap">
+      <div class="fix-9-12">
+        <h1 class="smaller margin-bottom-2 ae-1">
+          Autowäsche von Hand so günstig wie nie
+        </h1>
+        <p class="large ae-2">
+          <span class="opacity-8"
+            >Unsere ServiceHeroes reinigen Autos großer Flotten überall in
+            Berlin. Daher erhältst du bei Wasch-mein-Auto.de Konditionen,
+            die sonst nur Großkunden haben!</span
+          >
+        </p>
+        <ul class="flex flex-83 noSpaces equal ae-2 fadeIn">
+          <li class="col-4-12 ae-3" style="background: #f5fbfe;">
+            <div class="smaller margin-bottom-1">
+              Außenreinigung<br />
+            </div>
+            <div class="price ae-5">
+              <span class="currency">€</span>29,99
+            </div>
+            <div class="ae-5">
+              <p class="smallest uppercase bolder opacity-4">
+                MTL., jederzeit kündbar
+              </p>
+            </div>
+            <div class="margin-top-3 margin-bottom-3 equalElement ae-6">
+              <ul class="p small">
+                <li class="opacity-7">
+                  Unsere Profis reinigen dein Auto mit einem
+                  Spezial-Trockenspray und Mikrofasertuch von Hand.
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#main"
+              class="button small cyan rounded wide cropSides cropBottom ae-7 fromCenter"
+              alt="Wasch-mein-Auto"
+              >Jetzt beauftragen</a
+            >
+          </li>
+          <li class="col-4-12 ae-4" style="background: #eeeeee;">
+            <div class="smaller margin-bottom-1">Mit Innenreinigung</div>
+            <div class="price ae-6">
+              <span class="currency">€</span>+14,99
+            </div>
+            <div class="ae-6">
+              <p class="smallest uppercase bolder opacity-4">
+                AUF ANFRAGE
+              </p>
+            </div>
+            <div class="margin-top-3 margin-bottom-3 equalElement ae-7">
+              <ul class="p small">
+                <li><strong>Außenreinigung + </strong></li>
+                <li class="opacity-7">
+                  Professionelle Reinigung des Innenraums, der Armaturen,
+                  Innenscheiben und Ausklopfen der Fußmatten
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="col-4-12 ae-5" style="background: #eeeeee;">
+            <div class="smaller margin-bottom-1">
+              Weitere Services<br />
+            </div>
+            <div class="price ae-7">
+              <span class="currency">€</span>6,99
+            </div>
+            <div class="ae-7">
+              <p class="smallest uppercase bolder opacity-4">
+                AUF ANFRAGE
+              </p>
+            </div>
+            <div class="margin-top-3 margin-bottom-3 equalElement ae-8">
+              <ul class="p small">
+                <li><strong>Hochglanz-Finish</strong></li>
+                <li><strong>Felgen-Intensivpflege</strong></li>
+                <li><strong>Desinfektion</strong></li>
+                <li class="opacity-8">und viele mehr</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="background gradient-cyan"></div>
+</section>
+
+<!-- EXAMPLE: Background Gradient -->
+<style>
+/* get more here: http://www.colorzilla.com/gradient-editor/ */
+.gradient-cyan {
+  background: rgba(0, 188, 212, 1);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(0, 188, 212, 1) 0%,
+    rgba(104, 224, 207, 1) 100%
+  );
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, rgba(0, 188, 212, 1)),
+    color-stop(100%, rgba(104, 224, 207, 1))
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 188, 212, 1) 0%,
+    rgba(104, 224, 207, 1) 100%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(0, 188, 212, 1) 0%,
+    rgba(104, 224, 207, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(0, 188, 212, 1) 0%,
+    rgba(104, 224, 207, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 188, 212, 1) 0%,
+    rgba(104, 224, 207, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2a68', endColorstr='#ff5e3a', GradientType=1 );
+}
+</style>
+<!-- Slide 4 FürUnternehmen -->
+<section
+class="slide fade-6 kenBurns"
+data-title="Für Unternehmen"
+data-name="FürUnternehmen"
+id="FürUnternehmen"
+>
+<div class="content">
+  <div class="container">
+    <div class="wrap left">
+      <div class="fix-5-12 toLeft">
+        <div class="ae-1">
+          <p class="larger light margin-bottom-1 opacity-8">
+            FÜR UNTERNEHMEN
+          </p>
+        </div>
+        <h1 class="large margin-bottom-2 ae-1">
+          Autoreinigung für Ihren Fuhrpark
+        </h1>
+        <p class="larger light ae-2 margin-bottom-4">
+          <span class="opacity-8"
+            >Entlasten Sie Ihre Mitarbeiter und fragen Sie uns nach
+            unseren Lösungen für Ihren Fuhrpark.</span
+          >
+        </p>
+        <a
+          href="mailto:service@wasch-mein-auto.de"
+          style="padding: 20px;"
+          class="button cyan rounded fromCenter wideForPhablet cropLeft ae-3"
+          >Schreiben Sie uns</a
+        >
+        <a href="tel:+4915901954843‬">
+          <div
+            class="button white rounded popupTrigger wideForPhablet ae-4 fromCenter"
+            style="padding: 20px;"
+            data-popup-id="44-10"
+          >
+            <svg>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#symbol_2pgnc69"
+              ></use></svg>Rufen Sie uns an
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="background lazyload"
+  style="
+    background-image: url(landing/assets/uploads/bildschirmfoto-2020-08-06-um-15-22-15.png?p=ZUsSVq8a);
+  "
+></div>
+</section>
+<!-- Slide 5 faq -->
+<section
+class="slide whiteSlide"
+data-title="FAQ"
+data-name="questions"
+id="faq"
+>
+<div class="content">
+  <div class="container">
+    <div class="wrap">
+      <div class="fix-10-12">
+        <h3 class="margin-bottom-2 left ae-1">
+          Häufige Fragen zu Wasch-mein-Auto.de
+        </h3>
+        <p class="larger left light ae-2">
+          <span class="opacity-8"
+            >Bei allen anderen Fragen freuen wir uns auf deine
+            Nachricht!</span
+          >
+        </p>
+        <ul class="flex left margin-top-4">
+          <li class="col-6-12 margin-bottom-1 ae-3">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Welche Autos können gewaschen werden?
+            </h4>
+            <p class="opacity-8">
+              Jeder Pkw bis zu 3,5t ist zulässig. Du musst dabei nicht der
+              Halter des Fahrzeugs sein - du kannst deinen Liebsten auch
+              eine Freude bereiten 😍
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Wo &amp; wann kann ich mein Auto waschen lassen?
+            </h4>
+            <p class="opacity-8">
+              Praktisch im gesamten Berliner Stadtgebiet waschen wir
+              montags bis freitags zw. 8 und 18 Uhr dein Auto 💪
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-5">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Wie funktioniert Wasch-mein-Auto.de?
+            </h4>
+            <p class="opacity-8">
+              Schreib uns wo wir dein Auto waschen sollen. Innerhalb von
+              zwei Stunden führen unsere Profis den Service durch und
+              benachrichtigen dich im Anschluss.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-6">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Warum ist Wasch-mein-Auto.de so günstig?
+            </h4>
+            <p class="opacity-8">
+              Weil wir eigentlich nur mit großen Flotten zusammenarbeiten
+              und dir daher Großkunden-Konditionen bieten können.
+            </p>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="button big cyan rounded ae-7 fromCenter margin-4"
+          alt="Wasch-mein-Auto"
+          >Jetzt beauftragen</a
+        >
+        <h3 class="margin-bottom-2 left ae-1">
+          Häufige Fragen zur Autoreinigung
+        </h3>
+        <ul class="flex left margin-top-4">
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Kann die Außenreinigen Kratzer hinterlassen?
+            </h4>
+            <p class="opacity-8">
+              🧽 Unsere Profis waschen dein Auto mit speziellen
+              Mikrofasertüchern von Hand, sodass die Reinigung kratzfrei
+              gewährleistet werden kann.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Erfolgt die Reinigung bei jedem Wetter?
+            </h4>
+            <p class="opacity-8">
+              💪 Unsere ServiceHeroes sind nicht aus Zucker und waschen
+              dein Auto bei nahezu jedem Wetter. Nur gänzlich trocken wird
+              dein Auto bei Regen am Ende der Reinigung dann leider nicht.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-6">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Muss ich bei der Autoreinigung dabei sein?
+            </h4>
+            <p class="opacity-8">
+              ✨ Bei einer Außenreinigung musst du nicht anwesend sein.
+              Nur bei Services, bei denen das Auto geöffnet werden müsste
+              (zB. Innenreinigung), organisieren wir eine
+              Schlüsselübergabe.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Können Cabriolets gereinigt werden?
+            </h4>
+            <p class="opacity-8">
+              Grundsätzlich ja. Bitte beachte jedoch, dass Stoff-Verdecks
+              von Cabriolets nicht gereinigt werden können.
+            </p>
+          </li>
+        </ul>
+        <a
+          href="#"
+          class="button big cyan rounded ae-7 fromCenter margin-4"
+          alt="Wasch-mein-Auto"
+          >Jetzt beauftragen</a
+        >
+        <h3 class="margin-bottom-2 left ae-1">
+          Häufige Fragen zum Blitzeblank-Abo
+        </h3>
+        <ul class="flex left margin-top-4">
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Wie funktioniert das Blitzeblank-Abo?
+            </h4>
+            <p class="opacity-8">
+              Einmal monatlich, spätestens jedoch mit deiner nächsten
+              Beauftragung, wird der Wert einer Außenreinigung bequem und
+              sicher via Paypal abgebucht.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Warum sollte ich ein Abo abschließen?
+            </h4>
+            <p class="opacity-8">
+              Damit sicherst du dir den günstigen und zeitlich begrenzten
+              Einführungspreis und musst nicht mehr daran denken, dein
+              Auto selbst zu reinigen.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-4">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Kann ich das Abo kündigen?
+            </h4>
+            <p class="opacity-8">
+              Ja, du kannst jederzeit dein Abo ohne Angabe von Gründen mit
+              einer formlosen Nachricht an uns kündigen.
+            </p>
+          </li>
+          <li class="col-6-12 margin-bottom-1 ae-6">
+            <h4 class="smaller margin-top-1 margin-bottom-1">
+              Ist das Abo übertragbar?
+            </h4>
+            <p class="opacity-8">
+              Das Abo läuft auf dein ursprünglich hinterlegtes
+              Zahlungsmittel (zB. Paypal). Du kannst die Reinigung jedoch
+              für jedes beliebige Auto durchführen lassen.
+            </p>
+          </li>
+        </ul>
+        <a
+          href="#main"
+          class="button big cyan rounded ae-7 fromCenter"
+          alt="Wasch-mein-Auto"
+          >Jetzt beauftragen</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Panel Bottom #02 -->
+<nav class="panel bottom forceMobileView lastSlideOnly panelBottom">
+<div class="sections desktop">
+  <div class="left"></div>
+  <div class="center">
+    <ul class="menu uppercase">
+      <li>
+        <a href="/rechtliches/#impressum" target="_blank" rel="nofollow"
+          >Impressum</a
+        >
+      </li>
+      <li>
+        <a href="/rechtliches/#agb" target="_blank" rel="nofollow">AGB</a>
+      </li>
+      <li>
+        <a href="/rechtliches/#datenschutz" rel="nofollow" target="_blank"
+          >Datenschutz</a
+        >
+      </li>
+      <li>
+        <a href="mailto:service@wasch-mein-auto.de" target="_blank"
+          >service@wasch-mein-auto.de</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <span data-dropdown-id="2" class="button actionButton dropdownTrigger"
+      ><svg>
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="#share"
+        ></use></svg></span>
+  </div>
+</div>
+<div class="sections compact hidden">
+  <div class="right">
+    <span data-dropdown-id="2" class="button actionButton dropdownTrigger"
+      ><svg>
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="#share"
+        ></use></svg></span>
+  </div>
+</div>
+</nav>
+
+<!-- Share Window -->
+<div
+class="dropdown share bottom left"
+data-dropdown-id="2"
+data-text="Profis waschen dein Auto sofort und an Ort und Stelle"
+data-url="https://wasch-mein-auto.de"
+data-pinterest-image="https://designmodo.com/wp-content/uploads/2015/10/Presentation.jpg"
+>
+<div class="center padding-2">
+  <div class="title">Weitersagen</div>
+</div>
+<ul>
+  <li class="social-facebook">
+    <svg>
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="#fb-like"
+      ></use>
+    </svg>
+  </li>
+  <li class="social-twitter">
+    <svg>
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="#twitter"
+      ></use>
+    </svg>
+  </li>
+  <li class="social-pinterest">
+    <svg>
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="#pinterest"
+      ></use>
+    </svg>
+  </li>
+  <li class="social-linkedin">
+    <svg>
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="#linkedin"
+      ></use>
+    </svg>
+  </li>
+  <li class="mail" data-subject="Subject" data-body="Body">
+    Per E-Mail teilen
+  </li>
+</ul>
+</div>
+{{ end }}

@@ -1,0 +1,185 @@
+/* Slide 1 (#43) */
+
+.wrap {
+  padding: 65px calc(7% + 15px) !important;
+}
+.hideForMobile {
+  display: none;
+}
+.showForMobile {
+  display: block;
+}
+.mobileMargin {
+  margin-top: 0 !important;
+}
+.topbar-logo {
+  width: 120px;
+  height: 60px;
+}
+.button {
+  padding: 14px 4px;
+}
+.laterContainer {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  background-color: #f6f6f6;
+  color: #666666;
+}
+.pad {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.material-icons {
+  font-size: 20px;
+}
+
+.label {
+  font-weight: 200;
+}
+
+.dropdownTrigger {
+  color: #999999;
+}
+.checkbox-container {
+  padding-left: 42px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+/* Hide the Ordinary Checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxOutsideText {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  margin-bottom: 0 !important;
+}
+/* Checkbox Icons */
+label {
+  position: relative;
+  padding-left: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 11px 28px 0 0;
+  font-weight: 600;
+  color: rgb(36, 36, 36);
+}
+
+label:before,
+label:after {
+  font-family: FontAwesome;
+  font-size: 35px;
+  /*absolutely positioned*/
+  position: absolute;
+  top: 0;
+  left: -40px;
+  font-weight: 500;
+  color: #000;
+}
+
+label:before {
+  content: "\f096"; /*checkbox unchecked */
+}
+label:after {
+  content: "\f00c"; /*checkbox checked*/
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0.5;
+  font-size: 21px;
+  top: 9px;
+  left: -37px;
+  color: #00BCD4;
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.checkbox-disabled:after {
+  color: grey;
+}
+
+/* Animating the Checkbox Icon */
+input[type="checkbox"]:checked + label:after {
+  max-width: 25px;
+  opacity: 1;
+  margin-right: 90px;
+}
+.limit-width {
+  margin-bottom: 10px;
+}
+
+.lineHeight {
+  line-height: 17px;
+  width: 90%;
+}
+
+.panelBottom {
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .hideForMobile {
+    display: block;
+  }
+  .showForMobile {
+    display: none;
+  }
+  .mobileMargin {
+    margin-top: 40px !important;
+  }
+  .ul {
+    /*height: 100%;*/
+  }
+  .ui {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .limit-width {
+    max-width: 260px;
+    margin-bottom: 0;
+  }
+  .margin-right {
+    margin-right: 40px !important;
+  }
+  label {
+    position: relative;
+    padding-left: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 16px 28px 0 0;
+    font-weight: 600;
+    color: rgb(36, 36, 36);
+  }
+  .checkboxOutsideText {
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    margin-bottom: 0 !important;
+  }
+  .lineHeight {
+    line-height: 26px;
+    width: 80%;
+  }
+  .panelBottom {
+    background-color: white;
+  }
+}
+
+/* Slide 2 (#83) */
+.price {
+  font-size: 68px;
+}
+.smaller {
+  font-size: 16px;
+  font-weight: 600;
+}
+.flex.flex-83 {
+  box-shadow: -1px 0 0 #000000 inset;
+}

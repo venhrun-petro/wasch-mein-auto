@@ -1,0 +1,14 @@
+<sections class="story">
+    <div class="container">
+        <div class="row">
+            <div class="story_cont">
+                <div class="story_cont_img" >
+                    <img src="{{ .Params.story_img | absURL }}" alt="story" />
+                </div>
+                <div class="story_cont_content">
+                    {{ .Params.story_content | markdownify  }}
+                </div>
+            </div>
+        </div>
+    </div>
+</sections>

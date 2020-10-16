@@ -1,0 +1,144 @@
+.bramble{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    background-color: $background-gray2;
+    padding-top: 185px;
+    box-sizing: border-box;
+    & .general-button{
+        margin: 51px auto 81px;
+        display: table;
+    }
+    @include sm {
+        padding-top: 120px;
+    }
+    & .general-img-white{
+        transform: rotate(180deg);
+    }
+    & .title-d4, & .general_paragraph{
+        text-align: center;
+        margin: 0;
+    }
+    & .h5{
+        max-width: 996px;
+        margin: 0 auto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 158%;
+        text-align: center;
+        color: #555A64;
+    }
+    & .general_paragraph{
+        max-width: 690px;
+        margin: 0 auto;
+    }
+    & .title-d4{
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+    }
+    &_cont{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 85px;
+        padding-bottom: 95px;
+        @include sm {
+            padding-top: 60px;
+            padding-bottom: 120px;
+        }
+        &_block{
+            width: 100%;
+            max-width: 310px;
+            margin: 15px;
+            padding: 12px;
+            background-color: $background-white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 5px;
+            box-sizing: border-box;
+            @include xsl {
+                max-width: 100%;
+                margin: 0 0 20px 0;
+            }
+            & .h5{
+                margin: 0;
+            }
+            &_img{
+                width: 48px;
+                height: 48px;
+                object-fit: contain;
+                margin-right: 25px;
+            }
+        }
+        &_block:last-child{
+            @include xsl {
+                margin: 0 0 0 0;
+            }
+        }
+    }
+    &_list{
+        width: 100%;
+        border-top: 3px solid $color-white;
+        padding-top: 20px;
+        @include sm {
+            padding-top: 0;
+        }
+        &_cont{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            @include md {
+                 flex-wrap: wrap;
+            }
+            @include xsl {
+                width: auto;
+                margin: 0 -15px;
+            }
+            &_items{
+                width: 100%;
+                max-width: 360px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                padding: 70px 20px 75px;
+                border-right: 3px solid $color-white;
+                @include md {
+                    border-right: none;
+               }
+               @include xsl {
+                    max-width: 100%;
+                    margin: 0 -15px;
+                    padding: 60px 20px 60px;
+                    border-bottom: 3px solid $color-white;
+                }
+                &_block{
+                    margin: 0 auto;
+                    max-width: 290px;
+                    & .title-d4{
+                        margin: 0;
+                        color: $color-gray5;
+                        text-align: left;
+                        @include sm {
+                            font-size: 54px;
+                        }
+                    }
+                    & .general_paragraph{
+                        margin: 13px 0 0;
+                        text-align: left;
+                    }
+                }
+            }
+            &_items:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+ 

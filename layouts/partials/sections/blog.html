@@ -1,0 +1,35 @@
+ 
+  <div class="container" role="main">
+      <h2>blog 2</h2>
+        <div class="posts-list">
+          {{ $pag := .Paginate (where .Data.Pages "Type" "post").Reverse }}
+          {{ range $pag.Pages }}
+            <article class="post-preview">
+              <h2 class="post-title">{{ .Title }}</h2>
+              {{ range .Paginator.Pages }}
+                  <a  href="{{ .Permalink }}">
+                     <h2 class="post-title">{{ .Title }}</h2>
+                  </a>
+              {{ end }}
+              {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+              <ul class="pager main-pager">
+                {{ if .Paginator.HasPrev }}
+                  <li class="previous">
+                    <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ i18n "newerPosts" }}</a>
+                  </li>
+                {{ end }}
+                {{ if .Paginator.HasNext }}
+                  <li class="next">
+                    <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">{{ i18n "olderPosts" }} &rarr;</a>
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+            </article>
+          {{ end }}
+        </div>
+     
+  </div>
+  
+ 
+

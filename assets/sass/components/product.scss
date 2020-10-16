@@ -1,0 +1,199 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: $background-white;
+    padding-bottom: 150px;
+    @include xs {
+        padding-bottom: 120px;
+      }
+    &_cont{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &_list{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            // flex-wrap: wrap;
+            align-items: center;
+            padding-top: 150px;
+            padding-bottom: 50px;
+            @include sm {
+                padding-top: 120px;
+                padding-bottom: 0px;
+            }
+            @include md {
+                flex-direction: column;
+                justify-content: center;
+              }
+            &_column{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                & .title{
+                    margin: 0;
+                }
+                &_sub{
+                    font-family: $font-nunito;
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 14px;
+                    line-height: 140%;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: #555A64;
+                    opacity: 0.5; 
+                    margin: 0;
+                    margin-bottom: 28px;
+                }
+                &_paragraph, &_paragraph *{
+                    font-family: $font-nunito;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 20px;
+                    line-height: 158%;
+                    color: $color-gray4;
+                    margin-top: 16px;
+                    margin-bottom: 45px;
+                    @include sm {
+                        font-size: 16px;
+                        margin-bottom: 25px;
+                    }
+                    a{
+                        text-decoration: none;
+                        margin: 0;
+                        color: $color-green;
+                      }
+                }
+                &_img{
+                    max-width: 100%;
+                    object-fit: cover;
+                    @include md {
+                        margin-top: 70px;
+                      }
+                }
+            }
+            &_column:nth-child(even) {
+                align-items: center;
+            }
+            &_ul{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                &_items{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin: 15px 40px 15px 0;
+                    img{
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 12px;
+                    }
+                    p{
+                        font-family: "Biryani", sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 18px;
+                        color: #2C3038;
+                        padding-top: 3px;
+                        margin: 0;
+                        width: 189px;
+                    }
+                }
+                &_items:nth-child(2n + 2){
+                    margin: 15px 0 15px 0;
+                }
+            }
+        }
+        &_list:nth-child(odd) {
+            .product_cont_list_column:nth-child(odd) {
+                max-width: 490px;
+                margin-right: 15px;
+                @include md {
+                    margin-right: 0;
+                  }
+            }
+            .product_cont_list_column:nth-child(even) {
+                max-width: 590px;
+                margin-left: 15px;
+                @include md {
+                    margin-left: 0;
+                    max-width: 490px;
+                  }
+            }
+        }
+        &_list:nth-child(even){
+            flex-direction: row-reverse;
+            @include md {
+                flex-direction: column;
+              }
+            .product_cont_list_column:nth-child(odd) {
+                max-width: 490px;
+                margin-left: 15px;
+                @include md {
+                    margin-left: 0;
+                  }
+            }
+            .product_cont_list_column:nth-child(even) {
+                max-width: 590px;
+                margin-right: 15px;
+                @include md {
+                    margin-right: 0;
+                    max-width: 490px;
+                  }
+            }
+        }
+        
+    }
+}
+.product-haus{
+    .product_cont{
+        &_list:nth-child(1), &_list:nth-child(4), &_list:nth-child(5), &_list:nth-child(7) {
+            flex-direction: row;
+            @include md {
+                flex-direction: column;
+            }
+            .product_cont_list_column:nth-child(odd) {
+                max-width: 490px;
+                margin-right: 15px;
+                @include md {
+                    margin-right: 0;
+                  }
+            }
+            .product_cont_list_column:nth-child(even) {
+                max-width: 590px;
+                margin-left: 15px;
+                @include md {
+                    margin-left: 0;
+                    max-width: 490px;
+                  }
+            }
+        }
+        &_list:nth-child(2), &_list:nth-child(3), &_list:nth-child(6), &_list:nth-child(8){
+            flex-direction: row-reverse;
+            @include md {
+                flex-direction: column;
+              }
+            .product_cont_list_column:nth-child(odd) {
+                max-width: 490px;
+                margin-left: 15px;
+                @include md {
+                    margin-left: 0;
+                  }
+            }
+            .product_cont_list_column:nth-child(even) {
+                max-width: 590px;
+                margin-right: 15px;
+                @include md {
+                    margin-right: 0;
+                    max-width: 490px;
+                  }
+            }
+        }
+    }
+    
+}

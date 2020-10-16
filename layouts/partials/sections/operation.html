@@ -1,0 +1,26 @@
+<sections class="operation">
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.operation_title }}</h2>
+        <p class="lead-text">{{ .Params.operation_paragraph }}</p>
+        <div class="row">
+            <div class="operation_cont">
+                {{ range .Params.operation_list }}
+                    <div class="operation_cont_items">
+                        <div class="operation_cont_items_block">
+                            {{ range .list_info }}
+                                <div class="operation_cont_items_block_list">
+                                    <img class="operation_cont_items_block_list_icons" src="{{ .img }}" alt="operations" />
+                                    <div class="operation_cont_items_block_list_info">
+                                        <h5 class="h5">{{ .title }}</h5>
+                                        <p class="general_paragraph">{{ .paragraph }}</p>
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                        <img class="operation_cont_items_img" src="{{ .img }}" alt="operations" />
+                    </div> 
+                {{ end }}
+            </div>
+        </div> 
+    </div>
+</sections>

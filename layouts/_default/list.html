@@ -1,0 +1,44 @@
+ {{ define "main" }}
+  <sections class="product">
+    <div class="container">
+        <div class="row">
+            <div class="product_cont">
+              {{ $pag := .Paginate (where .Data.Pages "Type" "blog").Reverse  }}
+              {{ range $pag.Pages }}
+                <div class="product_cont_list">
+                  <div class="product_cont_list_column">
+                      <p class="product_cont_list_column_sub">{{ .Params.subtitle }}</p>
+                      <h2 class="title">{{ .Title }}</h2>
+                      <div class="product_cont_list_column_paragraph">{{ .Params.paragraph | markdownify }}</div>
+                     <div>
+                          <a class="button-read" href="{{ .Permalink }}" >Read more
+                              <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+                          </a>
+                      </div>
+                  </div>
+                  <div class="product_cont_list_column">
+                      <img class="product_cont_list_column_img" src="{{ .Params.img | absURL }}" alt="arrow" />
+                  </div>
+                </div>
+              {{ end }}
+              {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+              <div class="pager">
+                {{ if .Paginator.HasPrev }}
+                  <a class="button-read button-read-prev" href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}" >
+                    <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+                    Prev
+                  </a>
+                {{ end }}
+                {{ if .Paginator.HasNext }}
+                  <a class="button-read" href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}" >Next
+                    <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+                  </a>
+                {{ end }}
+                </div>
+            {{ end }}
+            </div>
+        </div>
+    </div>
+  </sections>  
+{{ end }}
+

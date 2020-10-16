@@ -1,0 +1,38 @@
+<sections class="contact" id="contact">
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.contact_title }}</h2>
+        <p class="lead-text">{{ .Params.contact_paragraph }}</p>
+        <div class="row">
+            <div class="contact_cont">
+                <form class="contact_cont_form" action="https://app.99inbound.com/api/e/man5RYhC" method="POST" target="_blank">
+                    <div class="contact_cont_form_list">
+                        <label class="contact_cont_form_list_label" for="name">Your Name</label>
+                        <input class="contact_cont_form_list_input" type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="contact_cont_form_list">
+                        <label class="contact_cont_form_list_label" for="email">Email Address</label>
+                        <input class="contact_cont_form_list_input" type="email" placeholder="you@yoursite.com"  name="email" required>
+                    </div>
+                    <div style="position: absolute; left: -5000px;">
+                      <input type="checkbox" name="conservative_black_glossy_floppy_disk" value="1" tabindex="-1" autocomplete="no">
+                    </div>
+                    <div class="contact_cont_form_list">
+                        <label class="contact_cont_form_list_label" for="location">Location</label>
+                        <input class="contact_cont_form_list_input" type="text" placeholder="Where is your company located?" name="location" required>
+                    </div>
+                    <div class="contact_cont_form_list">
+                        <label class="contact_cont_form_list_label" for="size">Company Size</label>
+                        <select class="contact_cont_form_list_select" name="size" required>
+                            <option value="">Select an option</option>
+                            <option value="100">0-100</option>
+                            <option value="101-500">101-500</option>
+                            <option value="500-2000">500-2000</option>
+                            <option value="2001+">2000+</option>
+                          </select>
+                    </div>
+                    <button class="general-button" type="submit">Schedule a Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</sections>

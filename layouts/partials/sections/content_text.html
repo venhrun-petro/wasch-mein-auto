@@ -1,0 +1,19 @@
+<sections class="content">
+    <div class="container">
+        <div class="content_cont">
+            <div class="content_cont_top">
+                <div class="content_cont_top_info">
+                    <h2>{{ .Params.page_title }}</h2>
+                    <p >{{ .Params.paragraph }}</p>
+                </div>
+                <div class="content_cont_top_btn">
+                    <a class="general-button button-print"  id="button-print">{{ .Params.button_text }}</a>
+                </div>
+            </div>
+            <div class="content_cont_bottom" id="element-print">
+                {{ .Content  }}
+            </div>
+        </div>
+        <!-- <a href="{{ .Site.BaseURL }}{{ .Params.grey_url }}" class="grey-button">{{ .Params.grey_button_text | markdownify }}</a> -->
+    </div>
+</sections>

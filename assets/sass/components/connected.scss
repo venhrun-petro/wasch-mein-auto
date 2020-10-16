@@ -1,0 +1,90 @@
+.connected{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: $background-gray2;
+    padding-top: 165px;
+    padding-bottom: 163px;
+    box-sizing: border-box; 
+    @include sm {
+        padding-top: 90px;
+        padding-bottom: 120px;
+    }
+    & .general-img-white{
+        top: auto;
+        bottom: 0px;
+        z-index: 99;
+    }
+    overflow: hidden;
+    & .title-d4, & .lead-text{
+        text-align: center;
+        margin: 0 0;
+    }
+    & .lead-text{
+        max-width: 690px;
+        margin: 20px auto 0;
+    }
+    &_cont{
+        padding-top: 75px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include xsl {
+            padding-top: 60px;
+            justify-content: space-between
+        }
+        &_items{
+            background: $background-white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 6px 25px 6px 10px;
+            margin: 15px;
+            height: 72px;
+            box-sizing: border-box;
+            @include xsl {
+                padding: 6px;
+                margin: 7.5px;
+            }
+            & .h5{
+                margin: 0;
+                @include xsl {
+                    display: none;
+                }
+            }
+            &_icons{
+                max-width: 60px;
+                max-height: 60px;
+                margin-right: 24px;
+                object-fit: contain;
+                @include xsl {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &_api-text{
+        display: table;
+        background: $background-white;
+        border-radius: 5px;
+        min-width: 352px;
+        padding: 12px 10px;
+        font-family: $font-nunito;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: $color-gray;
+        margin: 33px auto 0;
+        box-sizing: border-box;
+        @include xsl {
+            margin: 60px auto 0;
+            min-width: 100%;
+        }
+    }
+}
+ 

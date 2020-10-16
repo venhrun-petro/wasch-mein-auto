@@ -1,0 +1,26 @@
+<sections class="product">
+    <div class="container">
+        <div class="row">
+            <div class="product_cont">
+                {{ range .Params.Product }}
+                    <div class="product_cont_list" id="{{ .id }}">
+                        <div class="product_cont_list_column">
+                            {{ if .sub_title }}<p class="product_cont_list_column_sub">{{ .sub_title }}</p>{{ end }}
+                            <h2 class="title">{{ .title }}</h2>
+                            <p class="product_cont_list_column_paragraph">{{ .paragraph }}</p>
+                            {{ if .button_link }}<div>
+                                <a class="button-read" href="{{ .Site.BaseURL }}{{ .button_link }}">Read more
+                                    <img class="button-read_arrow" src="{{ "svg/arrow.svg" | absURL }}" alt="arrow" />
+                                </a>
+                            </div>
+                            {{end}}
+                        </div>
+                        <div class="product_cont_list_column">
+                            <img class="product_cont_list_column_img" src="{{ .img | absURL }}" alt="arrow" />
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</sections>

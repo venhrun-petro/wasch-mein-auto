@@ -1,0 +1,112 @@
+baseurl = "http://localhost:1313/website/"
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "public"
+assetDir      = "assets/"
+title = "Bramble"
+canonifyurls  = true
+Paginate = 2
+paginatePath = 'page'
+
+
+[permalinks]
+  post = "/blog/:year/:month/:slug/"
+ 
+
+# [urlRewrite]
+#     "/posts/**" = "/blog"
+
+# tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive"]
+
+DefaultContentLanguage = "en"
+# theme = "beautifulhugo"
+metaDataFormat = "md"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Params]
+  subtitle = "Hugo Blog Template for GitLab Pages"
+  logo = "img/favicon.svg"
+  favicon = "img/favicon.svg"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+ 
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Some Person"
+  email = "youremail@domain.com"
+  facebook = "username"
+  googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+  gitlab = "username"
+  github = "username"
+  twitter = "username"
+  reddit = "username"
+  linkedin = "username"
+  xing = "username"
+  stackoverflow = "users/XXXXXXX/username"
+  snapchat = "username"
+  instagram = "username"
+  youtube = "user/username" # or channel/channelname
+  soundcloud = "username"
+  spotify = "username"
+  bandcamp = "username"
+  itchio = "username"
+  keybase = "username"
+
+
+[[menu.main]]
+    name = "Why Bramble"
+    url = "why-bramble"
+    weight = 1
+ [[menu.main]]
+    name = "Company"
+    url = "company"
+    weight = 2
+
+[[menu.main]]
+    parent = "Company"
+    name = "Our Story"
+    url = "company"
+    weight = 1
+
+[[menu.main]]
+    parent = "Company"
+    name = "Our Values"
+    url = "careers/#values"
+    weight = 2
+
+[[menu.main]]
+    parent = "Company"
+    name = "Team"
+    url = "company/#team"
+    weight = 2
+
+[[menu.main]]
+    parent = "Company"
+    name = "Careers"
+    url = "careers"
+    weight = 3
+
+
+[[menu.main]]
+    name = "Resources"
+    url = "resources"
+    weight = 4
+ 
+
+ 

@@ -1,0 +1,24 @@
+<sections class="dna">
+    {{  if .Params.dna_img }}<img class="general-img-white" src="{{ .Params.dna_img | absURL }}" alt="bg"/>{{ end }}
+    <div class="container"> 
+        <h2 class="title-d4">{{ .Params.dna_title }}</h2>
+        {{  if .Params.dna_paragraph }}
+        <p class="general_paragraph">{{ .Params.dna_paragraph }}</p>
+        {{ end }}
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="dna_cont">
+                {{ range .Params.dna_list }}
+                    <div class="dna_cont_items">
+                        <div class="dna_cont_items_row">
+                            <img src="{{ .img | absURL }}" alt="dna" />
+                            <h5>{{ .title }}</h5>
+                        </div>
+                        <p class="dna_cont_items_text">{{ .text }}</p>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</sections>

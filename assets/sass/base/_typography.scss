@@ -1,0 +1,81 @@
+.title{
+    font-family: $font-biryani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: $color-gray2;
+    @include sm {
+        font-size: 32px;
+    }
+}
+
+.title-d3{
+    font-family: $font-biryani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 85px;
+    letter-spacing: -0.02em;
+    color: $color-gray2;
+    @include sm {
+        font-size: 46px;
+        line-height: 122%;
+    }
+}
+
+.title-d4{
+    font-family: $font-biryani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: $color-gray2;
+    @include sm {
+        font-size: 36px;
+    }
+}
+
+
+.h5{
+    font-family: $font-biryani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: $color-gray2;
+}
+
+.h6{
+    font-family: $font-biryani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 122%;
+    color: $color-gray2;
+}
+
+.general_paragraph{
+    font-family: $font-nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-gray;
+}
+
+.lead-text{
+    font-family: $font-nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 158%;
+    text-align: center;
+    color: $color-gray;
+    @include sm {
+        font-size: 16px;
+    }
+}
