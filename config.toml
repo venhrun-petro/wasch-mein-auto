@@ -1,4 +1,5 @@
-baseurl = "http://localhost:1313/website/"
+# baseurl = "http://localhost:1313/website/"
+baseurl = "https://wasch-mein-auto.netlify.app/"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
@@ -47,26 +48,26 @@ pygmentCodeFences = true
 #  src = "img/hexagon.jpg"
 #  desc = "Hexagon"
 
-[Author]
-  name = "Some Person"
-  email = "youremail@domain.com"
-  facebook = "username"
-  googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  gitlab = "username"
-  github = "username"
-  twitter = "username"
-  reddit = "username"
-  linkedin = "username"
-  xing = "username"
-  stackoverflow = "users/XXXXXXX/username"
-  snapchat = "username"
-  instagram = "username"
-  youtube = "user/username" # or channel/channelname
-  soundcloud = "username"
-  spotify = "username"
-  bandcamp = "username"
-  itchio = "username"
-  keybase = "username"
+# [Author]
+#   name = "Some Person"
+#   email = "youremail@domain.com"
+#   facebook = "username"
+#   googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+#   gitlab = "username"
+#   github = "username"
+#   twitter = "username"
+#   reddit = "username"
+#   linkedin = "username"
+#   xing = "username"
+#   stackoverflow = "users/XXXXXXX/username"
+#   snapchat = "username"
+#   instagram = "username"
+#   youtube = "user/username" # or channel/channelname
+#   soundcloud = "username"
+#   spotify = "username"
+#   bandcamp = "username"
+#   itchio = "username"
+#   keybase = "username"
 
 
 [[menu.main]]
