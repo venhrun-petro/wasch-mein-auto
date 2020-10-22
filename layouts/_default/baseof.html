@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
   {{ partial "head.html" . }}
-  <body class="slides animated fast simplifiedMobile noPreload">
+  <body class="slides animated fast simplifiedMobile noPreload" id="body">
     {{ partial "header.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}

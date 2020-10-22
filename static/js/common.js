@@ -32,7 +32,6 @@ function onFormSubmit(){
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
               let lazyImage = entry.target;
-              console.log(lazyImage);
               lazyImage.src = lazyImage.dataset.img;
               lazyImage.style = 'background-image: url(' + lazyImage.src + ')';
               lazyImage.classList.remove("lazy");
@@ -48,3 +47,20 @@ function onFormSubmit(){
         // Possibly fall back to event handlers here
         console.log('img false')
     }
+
+
+//   <iframe
+//    src="https://www.googletagmanager.com/ns.html?id=GTM-M3MWJWX"
+//    height="0"
+//    width="0"
+//    style="display: none; visibility: hidden;"
+//  ></iframe>
+
+ $(document).ready(function(){
+  let createIframe = document.createElement("iframe");
+  createIframe.setAttribute("height", "0");
+  createIframe.setAttribute("width", "0");
+  createIframe.setAttribute("style", "display: none; visibility: hidden;");
+  createIframe.setAttribute("src", "https://www.googletagmanager.com/ns.html?id=GTM-M3MWJWX");
+  document.getElementById("body").appendChild(createIframe);
+}); 
