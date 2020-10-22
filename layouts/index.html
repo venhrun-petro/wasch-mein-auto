@@ -423,10 +423,8 @@ id="main"
   </div>
 </div>
 <div
-  class="background"
-  style="
-    background-image: url('{{ .Site.BaseURL }}img/wma-main-bg.png');
-  "
+  class="background lazy"
+  data-img="{{ .Site.BaseURL }}img/wma-main-bg.png"
 ></div>
 </section>
 
@@ -490,7 +488,7 @@ id="Sofunktioniert"
             >
               <li class="wide selected text-white">
                 <img
-                  src="{{ .Site.BaseURL }}img/miriam-quer-cyan-1200.jpg"
+                  data-src="{{ .Site.BaseURL }}img/miriam-quer-cyan-1200.jpg"
                   class="wide lazyload"
                   alt="Image"
                 />
@@ -504,7 +502,7 @@ id="Sofunktioniert"
               </li>
               <li class="wide text-white">
                 <img
-                  src="{{ .Site.BaseURL }}img/georg-quer-cyan-1200.jpg"
+                  data-src="{{ .Site.BaseURL }}img/georg-quer-cyan-1200.jpg"
                   class="wide lazyload"
                   alt="Image"
                 />
@@ -749,10 +747,9 @@ id="FürUnternehmen"
   </div>
 </div>
 <div
-  class="background lazyload"
-  style="
-    background-image: url('{{ .Site.BaseURL }}img/bildschirmfoto-2020-08-06-um-15-22-15.png');
-  "
+  class="background lazyload lazy"
+   
+  data-img="{{ .Site.BaseURL }}img/bildschirmfoto-2020-08-06-um-15-22-15.png"
 ></div>
 </section>
 <!-- Slide 5 faq -->
