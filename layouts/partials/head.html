@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <base href="./" />
   <title>Autoreinigung Berlin ab 19,99€ | Wasch-mein-Auto.de</title>
-  <!-- <meta
+  <meta
     property="og:title"
     content="Autoreinigung Berlin ab 19,99€ | Wasch-mein-Auto.de"
   />
@@ -23,6 +23,7 @@
     name="twitter:description"
     content="Profis reinigen dein Auto direkt vor Ort ✓ in unter 120 Min ✓ professionell ✓ ökologisch"
   />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}img/favicon.ico" property="og:image">
   <meta
     name="og:image"
     content="https://wasch-mein-auto.de/assets/images/wma-logo-share_1280x630.png"
@@ -33,7 +34,13 @@
   />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
-  -->
+  {{- with .Site.Params.favicon }} 
+  {{- end -}}
+  <!-- Social Media Tags -->
+  {{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+  {{- end }}
  
   
   
@@ -90,6 +97,6 @@
     property="twitter:image"
     content="https://wasch-mein-auto.de/assets/images/wma-logo-1280x630.png"
   />  
-
+   
   
 </head>
